@@ -1,4 +1,5 @@
 class App
+  # rubocop:disable Metrics/CyclomaticComplexity
   def home_page(option)
     case option
     when 1
@@ -30,4 +31,5 @@ class App
       puts "\n"
     end
   end
+  # rubocop:enable Metrics/CyclomaticComplexity
 end
