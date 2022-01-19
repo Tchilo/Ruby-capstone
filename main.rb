@@ -1,15 +1,15 @@
 # !/usr/bin/env ruby
 require_relative 'file_handlers'
 require_relative 'handlers'
-require_relative 'genre'
 require_relative 'item'
-require_relative 'source'
-require_relative 'author'
-require_relative 'label'
-require_relative 'book'
-require_relative 'music_album'
+# require_relative 'label'
+# require_relative 'book'
+# require_relative 'music_album'
+# require_relative 'genre'
+# require_relative 'game'
+# require_relative 'author'
 require_relative 'movie'
-require_relative 'game'
+require_relative 'source'
 
 class App
   include Handlers
