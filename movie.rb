@@ -1,32 +1,27 @@
-require_relative './item'
+require './item'
 
-class Movie < item
-  attr_reader :silent
+class Movie < Item
+  attr_accessor :silent
 
-  # rubocop:disable Metrics/ParameterLists
-  def initialize(genre, author, source, label, publish_date, silent)
-    super(genre, author, source, label, publish_date)
+  def initialize(publish_date:, silent:, archived: false, name: 'unknown')
+    super(publish_date: publish_date, archived: archived, name: name)
     @silent = silent
   end
-  # rubocop:enable Metrics/ParameterLists
 
   def can_be_archived?
-    super or silent
-  end
-
-  def to_s
-    "[Movie]: #{super}"
+    super() || @silent
   end
 
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'id' => id,
-      'genre' => @genre.id,
-      'author' => @author.id,
-      'source' => @source.id,
-      'label' => @label.id,
-      'silent' => @silent
+      'id' => @id,
+      'name' => @name,
+      'publish_date' => @publish_date,
+      'silent' => @silent,
+      'archived' => @archived
     }.to_json(*args)
   end
+
+  private :can_be_archived?
 end
