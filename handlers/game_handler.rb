@@ -1,4 +1,5 @@
 require 'json'
+require 'rainbow'
 require './game'
 require './author'
 
@@ -34,13 +35,13 @@ class GamesHandler
     @games.push(game)
 
     puts
-    puts('Successfully added game!')
+    puts Rainbow('Successfully added game!').white.bright
     puts
   end
 
   def all_games
     if @games.empty?
-      puts 'Sorry! Right now we have no games'
+      puts Rainbow('Sorry! Right now we have no games').red
     else
       puts 'All games are: '
       puts
@@ -61,7 +62,7 @@ class GamesHandler
       end
       puts
     else
-      puts 'Sorry! We have no authors detail'
+      puts Rainbow('Sorry! We have no authors detail').red
     end
   end
 

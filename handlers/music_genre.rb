@@ -34,7 +34,7 @@ module MusicGenreHandlers
         option = gets.chomp
         @genre[option.to_i]
       else
-        print 'invalid entry'
+        print Rainbow('invalid entry').red
       end
     else
       create_genre
@@ -63,7 +63,7 @@ module MusicGenreHandlers
     @genre << genre unless @genre.include?(genre)
 
     puts
-    puts 'Music album is created succussfully!'
+    puts Rainbow('Music album is created succussfully!').white.bright
     puts
   end
 
@@ -92,7 +92,7 @@ module MusicGenreHandlers
     genre = gets.chomp
     genre = Genre.new(genre)
     @genre << genre
-    puts 'Genre has been added successfully'
+    puts Rainbow('Genre has been added successfully').white.bright
   end
 
   def list_all_genre

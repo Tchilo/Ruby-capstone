@@ -1,11 +1,12 @@
 require 'json'
+require 'rainbow'
 require_relative '../book'
 require_relative '../label'
 
 module BookLabelHandlers
   def list_all_books
     if @books.empty?
-      puts 'You have not added any books yet'.upcase
+      puts Rainbow('YOU HAVE NOT ADDED ANY BOOKS YET').red
     else
       @books.each_with_index do |book, index|
         puts "#{index}) name: #{book.name}, publisher: #{book.publisher}, publish_date:#{book.publish_date}"
