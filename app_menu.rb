@@ -1,4 +1,5 @@
 require_relative 'glob_handler'
+require 'rainbow'
 
 class App
   include(BookLabelHandlers)
@@ -28,7 +29,10 @@ class App
     game_load
     print_o
     loop do
-      @options.each { |key, value| puts "\t #{key}) #{value}" }
+      @options.each { |key, value| puts Rainbow("\t #{key}) #{value}").white.bright }
+      puts Rainbow('___________________________________________').gold
+      puts ''
+      print "\n Enter option from above list: "
 
       option = gets.chomp
       break if option == '10'
@@ -46,10 +50,10 @@ class App
   end
 
   def print_o
-    puts 'Welcome to the Catalog Of My Things! '
+    puts Rainbow('Welcome to the Catalog Of My Things! ').gold
     puts ''
-    puts 'Please choose an option by entering a number.'
-    print 'enter option: '
+    puts Rainbow('Please choose an option by entering a number.').gold
+    print Rainbow('enter option: ').gold
     puts
   end
 

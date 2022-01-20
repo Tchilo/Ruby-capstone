@@ -1,4 +1,5 @@
 require 'json'
+require 'rainbow'
 require './movie'
 require './source'
 
@@ -29,7 +30,7 @@ class MovieHandler
         option = gets.chomp
         @sources[option.to_i]
       else
-        print 'invalid entry'
+        print Rainbow('invalid entry').red
       end
     else
       create_source
@@ -54,13 +55,13 @@ class MovieHandler
     @movies.push(movie)
 
     puts
-    puts('Successfully added movie!')
+    puts Rainbow('Successfully added movie!').white.bright
     puts
   end
 
   def all_movie
     if @movies.empty?
-      puts 'Sorry! Right now we have no movies'
+      puts Rainbow('Sorry! Right now we have no movies').red
     else
       puts 'All movies are: '
       puts
@@ -78,7 +79,7 @@ class MovieHandler
       @sources.each_with_index { |source, index| puts "#{index})  ID: #{source.id}, Name: '#{source.name}'" }
       puts
     else
-      puts 'Sorry! We have no sources detail'
+      puts Rainbow('Sorry! We have no sources detail').red
     end
   end
 
