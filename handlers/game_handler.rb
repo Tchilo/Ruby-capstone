@@ -1,4 +1,4 @@
-require 'json' 
+require 'json'
 require './game'
 require './author'
 
