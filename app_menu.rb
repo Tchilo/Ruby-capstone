@@ -119,7 +119,7 @@ class App
     end
   end
 
-  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics
   def handle_option(option)
     case option
     when '1'
@@ -144,5 +144,5 @@ class App
       puts 'That is not a valid option'
     end
   end
-  # rubocop:enable Metrics/CyclomaticComplexity
+  # rubocop:enable Metrics
 end
