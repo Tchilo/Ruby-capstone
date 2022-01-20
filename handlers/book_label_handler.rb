@@ -74,7 +74,7 @@ module BookLabelHandlers
   end
 
   def save_books
-    File.open('books.json', 'w') { |file| file.write JSON.generate(@books) } unless @books.empty?
+    File.write('books.json', JSON.generate(@books)) unless @books.empty?
   end
 
   def add_label
@@ -110,6 +110,6 @@ module BookLabelHandlers
   end
 
   def save_labels
-    File.open('labels.json', 'w') { |file| file.write JSON.generate(@labels) } unless @labels.empty?
+    File.write('labels.json', JSON.generate(@labels)) unless @labels.empty?
   end
 end
