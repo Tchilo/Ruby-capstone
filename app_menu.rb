@@ -1,3 +1,5 @@
+require_relative 'glob_handler'
+
 class App
   include(BookLabelHandlers)
   include MusicGenreHandlers
