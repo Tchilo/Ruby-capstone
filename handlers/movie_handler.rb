@@ -83,11 +83,11 @@ class MovieHandler
   end
 
   def save_movies
-    File.open('movies.json', 'w') { |file| file.write.JSON.generate(@movies) } unless @movies.empty?
+    File.open('movies.json', 'w') { |file| file.write JSON.generate(@movies) } unless @movies.empty?
   end
 
   def save_sources
-    File.open('sources.json', 'w') { |file| file.write.JSON.generate(@sources) } unless @sources.empty?
+    File.open('sources.json', 'w') { |file| file.write JSON.generate(@sources) } unless @sources.empty?
   end
 
   def load_movies_from_files

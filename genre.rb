@@ -1,14 +1,14 @@
 class Genre
   attr_accessor :name, :items
 
-  def initialize(_name)
-    super(publish_date)
-    @items = []
+  def initialize(name)
     @id = Random.rand(1..1000)
+    @name = name
+    @items = []
   end
 
   def add_item(item)
-    items.add_genre(self)
+    item.add_genre(self)
     @items.push(item) unless @items.include?(item)
   end
 
