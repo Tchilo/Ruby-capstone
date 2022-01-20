@@ -6,6 +6,13 @@
 
 ## Screenshots
 
+> |Screenshot 1|Screenshots 2|
+> |--------------|----------------|
+> |![](./img/ruby1.png)|![](./img/ruby2.png)|!
+> |Screenshot 3|Screenshots 4|
+> |--------------|----------------|
+> |![](./img/ruby3.png)|![](./img/ruby4.png)|!
+
 
 Additional description about the project and its features.
 
