@@ -7,6 +7,7 @@ class MusicAlbum < Item
     super(publish_date: publish_date, name: name, archived: archived)
     @on_spotify = on_spotify
   end
+
   def can_be_archived?
     @on_spotify && super
   end
@@ -18,7 +19,7 @@ class MusicAlbum < Item
       'publish_date' => @publish_date,
       'on_spotify' => @on_spotify,
       'archived' => @archived
-  }.to_json(*args)
-end
+    }.to_json(*args)
+  end
   private :can_be_archived?
 end
