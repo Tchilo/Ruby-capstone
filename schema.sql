@@ -2,18 +2,17 @@ CREATE DATABASE 'catalog';
 
 CREATE TABLE item(
   id INT GENERATED ALWAYS AS IDENTITY,
-  label_id INT,
-  source_id INT,
+  genre_id INT,
   author_id INT,
+  label_id  INT,
+  source_id INT,
   publish_date DATE,
   archived BOOLEAN,
   PRIMARY KEY(id),
+  FOREIGN KEY (genre_id) REFERENCES genres (id),
+  FOREIGN KEY (author_id) REFERENCES authors (id),
   FOREIGN KEY (source_id) REFERENCES sources (id),
-<<<<<<< HEAD
   FOREIGN KEY (label_id) REFERENCES labels (id)
-=======
-  FOREIGN KEY (author_id) REFERENCES authors (id)
->>>>>>> 751c710d1ce4935f1717366e6d99ca9f1845a9a8
 );
 
 CREATE TABLE sources(
@@ -41,6 +40,7 @@ CREATE TABLE labels(
   color VARCHAR(255),
   PRIMARY KEY(id)
 );
+
 CREATE TABLE author(
   id INT GENERATED ALWAYS AS IDENTITY,
   first_name VARCHAR(255),
@@ -55,5 +55,14 @@ CREATE TABLE games(
   FOREIGN KEY(id) REFERENCES item(id)
 );
 
+CREATE TABLE music_albums(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  on_spotify BOOLEAN,
+  FOREIGN KEY(id) REFERENCES item(id)
+);
 
-
+CREATE TABLE genres(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(255)
+  PRIMARY KEY(id)
+);
