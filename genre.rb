@@ -12,5 +12,12 @@ class Genre
     @items.push(item) unless @items.include?(item)
   end
 
-  
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'id' => @id,
+      'name' => @name,
+      'items' => @items
+  }.to_json(*args)
+end  
 end
