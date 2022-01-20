@@ -19,5 +19,6 @@ class MusicAlbum < Item
       'on_spotify' => @on_spotify,
       'archived' => @archived
   }.to_json(*args)
-
+end
+  private :can_be_archived?
 end
