@@ -1,1 +1,1 @@
-require_relative 'handlers/movie_handler'
+require_relative 'handlers/game_handler'
