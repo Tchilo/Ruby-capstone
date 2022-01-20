@@ -1,33 +1,43 @@
+require 'date'
+
 class Item
-  attr_accessor :id
-  attr_reader :genre, :author, :source, :label, :publish_date
+  attr_accessor :id, :archived, :source, :publish_date, :name, :genre, :author, :label
 
-  def initialize(genre, author, source, label, publish_date)
-    @id = Random.rand(1...1000)
+  def initialize(publish_date:, name:, archived: false)
+    @id = Random.rand(1..1000)
+    @publish_date = Date.parse(publish_date)
+    @archived = archived
+    @name = name
+  end
+
+  def add_genre(genre)
     @genre = genre
-    @genre.items << self
+    genre.items.push(self) unless genre.items.include?(self)
+  end
 
+  def add_author(author)
     @author = author
-    author.items << self
+    author.items.push(self) unless author.items.include?(self)
+  end
 
-    @source = souce
-    source.items << self
+  def add_source=(source)
+    @source = source
+    source.items.push(self) unless source.items.include?(self)
+  end
 
+  def add_label(label)
     @label = label
-    label.items << self
-
-    @publish_date = publish_date
-    @archived = false
+    label.items.push(self) unless label.items.include?(self)
   end
 
   def can_be_archived?
-    now = DateTime.now.next_year(-10).to_time
-    oldate = Date.parse(@publish_date).to_time
-
-    oldate <= now
+    today = Date.today
+    (today.year - @publish_date.year) > 10
   end
 
-  def move_to_archived
+  def move_to_archive
     @archived = can_be_archived?
   end
+
+  private :can_be_archived?
 end
