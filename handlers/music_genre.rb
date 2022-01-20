@@ -84,7 +84,7 @@ module MusicGenreHandlers
   end
 
   def save_music
-    File.open('music_album.json', 'w') { |file| file.write JSON.generate(@music_album) } unless @music_album.empty?
+    File.write('music_album.json', JSON.generate(@music_album)) unless @music_album.empty?
   end
 
   def add_genre
@@ -121,7 +121,7 @@ module MusicGenreHandlers
   end
 
   def save_genre
-    File.open('genre.json', 'w') { |file| file.write JSON.generate(@genre) } unless @genre.empty?
+    File.write('genre.json', JSON.generate(@genre)) unless @genre.empty?
   end
 end
 # rubocop:enable Metrics
