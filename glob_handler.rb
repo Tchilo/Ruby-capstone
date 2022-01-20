@@ -1,2 +1,1 @@
-require_relative "handlers/book_label_handler"
-
+require_relative 'handlers/book_label_handler'
