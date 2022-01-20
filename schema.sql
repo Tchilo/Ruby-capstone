@@ -15,13 +15,6 @@ CREATE TABLE item(
   FOREIGN KEY (label_id) REFERENCES labels (id)
 );
 
-CREATE TABLE books(
-  id INT GENERATED ALWAYS AS IDENTITY,
-  publisher VARCHAR(255),
-  cover_state VARCHAR(255),
-  FOREIGN KEY(id) REFERENCES item(id)
-);
-
 CREATE TABLE sources(
   id INT GENERATED ALWAYS AS IDENTITY,
   name VARCHAR(255)
@@ -34,10 +27,24 @@ CREATE TABLE movies(
   FOREIGN KEY(id) REFERENCES item(id)
 );
 
+CREATE TABLE books(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  publisher VARCHAR(255),
+  cover_state VARCHAR(255),
+  FOREIGN KEY(id) REFERENCES item(id)
+);
+
 CREATE TABLE labels(
   id INT GENERATED ALWAYS AS IDENTITY,
   title VARCHAR(255),
   color VARCHAR(255),
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE author(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
   PRIMARY KEY(id)
 );
 
@@ -48,11 +55,10 @@ CREATE TABLE games(
   FOREIGN KEY(id) REFERENCES item(id)
 );
 
-CREATE TABLE author(
+CREATE TABLE music_albums(
   id INT GENERATED ALWAYS AS IDENTITY,
-  first_name VARCHAR(255),
-  last_name VARCHAR(255),
-  PRIMARY KEY(id)
+  on_spotify BOOLEAN,
+  FOREIGN KEY(id) REFERENCES item(id)
 );
 
 CREATE TABLE genres(
@@ -61,8 +67,3 @@ CREATE TABLE genres(
   PRIMARY KEY(id)
 );
 
-CREATE TABLE music_albums(
-  id INT GENERATED ALWAYS AS IDENTITY,
-  on_spotify BOOLEAN,
-  FOREIGN KEY(id) REFERENCES item(id)
-);
