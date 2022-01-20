@@ -1,4 +1,4 @@
-require 'json'
+require 'json' # rubocop:todo Layout/EndOfLine
 require './game'
 require './author'
 
@@ -66,11 +66,11 @@ class GamesHandler
   end
 
   def save_games
-    File.open('games.json', 'w') { |file| file.write JSON.generate(@games) } unless @games.empty?
+    File.write('games.json', JSON.generate(@games)) unless @games.empty?
   end
 
   def save_author
-    File.open('authors.json', 'w') { |file| file.write JSON.generate(@authors) } unless @authors.empty?
+    File.write('authors.json', JSON.generate(@authors)) unless @authors.empty?
   end
 
   def load_games_from_files
