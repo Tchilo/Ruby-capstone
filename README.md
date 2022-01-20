@@ -1,59 +1,81 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Ruby group capstone - Catalog of my things
 
-> One paragraph statement about the project.
+> In this project, we created a console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. The data is then stored in JSON files.
 
-![screenshot](./app_screenshot.png)
+## Screenshots
+
+> |Screenshot 1|Screenshots 2|
+> |--------------|----------------|
+> |![](./img/ruby1.png)|![](./img/ruby2.png)|!
+> |Screenshot 3|Screenshots 4|
+> |--------------|----------------|
+> |![](./img/ruby3.png)|![](./img/ruby4.png)|!
+
 
 Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
+- SQL
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+```
+Ruby
+Rspec
+```
 
 ### Setup
+```
+git@github.com:Tchilo/Ruby-capstone.git
+cd Ruby-capstone
+```
 
-### Install
+### Run Program
+```
+ruby main.rb
+```
+### Run All Tests
 
-### Usage
+```
+rspec spec/
+```
 
-### Run tests
+### Run individual test
 
-### Deployment
-
-
-
+```
+rspec spec/filename_spec.rb
+```
 ## Authors
 
-👤 **Author1**
+👤 **Taro Chilongoshi**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/Tchilo)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/TaroChilongoshi)
 
-👤 **Author2**
+👤 **Isaac Lumato**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/isaka-lumato)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lumatoisaac)
+
+👤 **Yahya El Ganayni**
+
+- GitHub: [@githubhandle](https://github.com/yahyaelganyni1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yahya-el-ganayni-a456115b/)
+
+👤 **Mahbub Alam**
+
+- GitHub: [@githubhandle](https://github.com/mahbubul14)
+- LinkedIn: [LinkedIn]()
+
+
 
 ## 🤝 Contributing
 
