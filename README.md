@@ -6,13 +6,12 @@
 
 ## Screenshots
 
-> |Screenshot 1|Screenshots 2|
-> |--------------|----------------|
-> |![](./img/ruby1.png)|![](./img/ruby2.png)|!
-> |Screenshot 3|Screenshots 4|
-> |--------------|----------------|
-> |![](./img/ruby3.png)|![](./img/ruby4.png)|!
-
+> | Screenshot 1         | Screenshots 2        |
+> | -------------------- | -------------------- | --- |
+> | ![](./img/ruby1.png) | ![](./img/ruby2.png) | !   |
+> | Screenshot 3         | Screenshots 4        |
+> | --------------       | ----------------     |
+> | ![](./img/ruby3.png) | ![](./img/ruby4.png) | !   |
 
 Additional description about the project and its features.
 
@@ -23,35 +22,43 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+
 ```
 Ruby
 Rspec
 ```
 
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- [Ruby](https://www.ruby-lang.org/en/)
+
 ### Setup
-```
-git@github.com:Tchilo/Ruby-capstone.git
-cd Ruby-capstone
-```
 
-### Run Program
-```
-ruby main.rb
-```
-### Run All Tests
+- `git clone https://github.com/mmatongo/catalog-of-my-things.git`
+  or
+- `git clone git@github.com:mmatongo/catalog-of-my-thing.git`
 
-```
-rspec spec/
-```
+- `cd catalog-of-my-things`
 
-### Run individual test
+### Running The App
 
-```
-rspec spec/filename_spec.rb
+- Run `ruby main.rb` to run the console app.
+
+### Test
+
+- Run `gem install rspec` to install Rspec,
+
+- Run `rspec spec` to run all the test cases, and
+
+- Run `rspec spec/name_of_test_file.rb` to run test cases individually.
+
 ```
 ## Authors
 
@@ -96,3 +103,4 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+```
