@@ -1,6 +1,7 @@
 require 'json'
 require_relative '../music_album'
 require_relative '../genre'
+# rubocop:disable Metrics
 
 module MusicGenreHandlers
   def list_all_music_album
@@ -123,3 +124,4 @@ module MusicGenreHandlers
     File.write('genre.json', JSON.generate(@genre)) unless @genre.empty?
   end
 end
+# rubocop:enable Metrics
