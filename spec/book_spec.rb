@@ -1,17 +1,17 @@
-require_relative "../book"
-require_relative "../item"
+require_relative '../book'
+require_relative '../item'
 
-describe "Book" do
+describe 'Book' do
   before :each do
-    @book = Book.new(cover_state: "bad", name: "Marriage", publisher: "longhorn", publish_date: "2020-12-2")
+    @book = Book.new(cover_state: 'bad', name: 'Marriage', publisher: 'longhorn', publish_date: '2020-12-2')
   end
 
-  describe "#new" do
-    it "is an instance of Book" do
+  describe '#new' do
+    it 'is an instance of Book' do
       expect(@book).to be_an_instance_of(Book)
     end
 
-    it "returns true when coverstate" do
+    it 'returns true when coverstate' do
       expect(@book.archived).to eql false
     end
 
@@ -20,7 +20,7 @@ describe "Book" do
       expect(@book.archived).to eql true
     end
 
-    it "inherits from Item class" do
+    it 'inherits from Item class' do
       expect(@book).to be_kind_of(Item)
     end
   end
