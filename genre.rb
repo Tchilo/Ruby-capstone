@@ -1,7 +1,7 @@
 class Genre
   attr_accessor :name, :items
 
-  def initialize(name)
+  def initialize(_name)
     super(publish_date)
     @items = []
     @id = Random.rand(1..1000)
@@ -18,6 +18,6 @@ class Genre
       'id' => @id,
       'name' => @name,
       'items' => @items
-  }.to_json(*args)
-end  
+    }.to_json(*args)
+  end
 end
